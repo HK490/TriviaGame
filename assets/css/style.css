@@ -19,5 +19,19 @@ h1 {
     padding: 20px;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 50px;
 }
+
+p,
+li {
+    text-align: center;
+    margin: auto;
+    
+}
+
+.startButton {
+    font-size: 50px;
+    margin: auto;
+}
+
+
