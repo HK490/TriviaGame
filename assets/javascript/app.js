@@ -27,8 +27,11 @@ $(document).ready(function () {
             clearInterval(intervalId);
         }
         function wrongAnswer() {
-            question.append("<p>Wrong Answer!wrongAnswer!!!!!!!</p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            if (number === 0) {
+                stop()
+                $("p").empty();
+                wrongAnswerOptATwo();
+            }
         }
 
         function roundOneA() {
@@ -93,7 +96,8 @@ $(document).ready(function () {
         function wrongAnswerOptATwo() {
             $("p").empty();
             timerForQAThree();
-            question.append("<p>Wrong Answer</p>")
+            question.append("<p>Time's Up</p>")
+            question.append("Correct Answer Is")
             question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
         }
         let numberTwentySix = 6
@@ -136,7 +140,8 @@ $(document).ready(function () {
         function wrongAnswerOptAFour() {
             $("p").empty();
             timerForQAFive();
-            question.append("<p>Wrong Answer</p>")
+            question.append("<p>Time's Up</p>")
+            question.append("Correct Answer Is")
             question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
         }
         let numberTwentyEight = 6
