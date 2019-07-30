@@ -14,10 +14,28 @@ $(document).ready(function () {
     }
     start();
 
-    begin.on("click", function () {
+    let beginAgain = begin.on("click", function () {
         begin.hide();
 
+        function startOver() {
+            question = $("p.question")
+            answer = $("p.answer")
+            answerTwo = $("p.answerB")
+            answerThree = $("p.answerC")
+            begin = $("p.start")
+            timer = $("p.timer")
+            number = 6;
+            intervalId;
+
+            beginAgain();
+
+        }
+
         function result() {
+            question.append("<button>Start Over</button>")
+            question.on("click", function () {
+                startOver();
+            })
             answer.append("Correct:")
             answerTwo.append("Incorrect:")
             answerThree.append("GAME OVER")
