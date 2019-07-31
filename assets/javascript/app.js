@@ -8,36 +8,41 @@ $(document).ready(function () {
     let timer = $("p.timer")
     let number = 6;
     let intervalId;
+    // let myCorrectScore = 0
+    // let myIncorrectScore = 0
 
     function start() {
         begin.append("<button>Start</button>")
     }
     start();
 
-    let beginAgain = begin.on("click", function () {
+
+    begin.on("click", beginGame);
+    $(document).on("click", ".start-over", function () {
+        clearInterval(intervalId);
+        number = 6;
+        beginGame();
+
+
+    });
+
+    function beginGame() {
         begin.hide();
 
-        function startOver() {
-            question = $("p.question")
-            answer = $("p.answer")
-            answerTwo = $("p.answerB")
-            answerThree = $("p.answerC")
-            begin = $("p.start")
-            timer = $("p.timer")
-            number = 6;
-            intervalId;
 
-            beginAgain();
+        // function correctIncorrect() {
+        //     if () {
+        //         myCorrectScore++;
+        //     } else if(number === 0) {
+        //         myIncorrectScore++;
+        //     }
+        // };
 
-        }
 
         function result() {
-            question.append("<button>Start Over</button>")
-            question.on("click", function () {
-                startOver();
-            })
-            answer.append("Correct:")
-            answerTwo.append("Incorrect:")
+            question.append("<button class='start-over'>Start Over</button>")
+            answer.append("Correct:" + myCorrectScore)
+            answerTwo.append("Incorrect:" + myIncorrectScore)
             answerThree.append("GAME OVER")
         }
 
@@ -73,7 +78,7 @@ $(document).ready(function () {
             $("p").empty();
             timerForQAOne();
             question.append("<p>Correct!</p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_c9S1gBJPFd9mC6-eDg4lQbNuXIoEF_Egc3VRSnEVyqjBlEvH>")
         }
         let numberTwentyFour = 6
         function timerForQAOne() {
@@ -92,10 +97,10 @@ $(document).ready(function () {
         function questionOptATwo() {
             $("p").empty();
             timerForQATwo();
-            question.text("Question1")
-            answer.text(" A One")
-            answerTwo.text("A Two")
-            answerThree.text("A Three")
+            question.text("Retinal Detachments are common in which of the following")
+            answer.text("in high myopes")
+            answerTwo.text("after contusion")
+            answerThree.text("with melanomas")
         }
         let numberTwentyFive = 6
         function timerForQATwo() {
@@ -115,8 +120,8 @@ $(document).ready(function () {
             $("p").empty();
             timerForQAThree();
             question.append("<p>Time's Up</p>")
-            question.append("Correct Answer Is")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Symptoms of dry eyes include burning sensation and watery eyes</p>")
+            question.append("<img src= https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberTwentySix = 6
         function timerForQAThree() {
@@ -135,10 +140,10 @@ $(document).ready(function () {
         function questionOptAThree() {
             $("p").empty();
             timerForQAFour();
-            question.text("Question1")
-            answer.text(" A One")
-            answerTwo.text("A Two")
-            answerThree.text("A Three")
+            question.text("Central serious retinothy is a disease of")
+            answer.text(" persons between 25 and 50")
+            answerTwo.text("elderly persons over 65")
+            answerThree.text("persons under the age of 18")
         }
         let numberTwentySeven = 6
         function timerForQAFour() {
@@ -159,8 +164,8 @@ $(document).ready(function () {
             $("p").empty();
             timerForQAFive();
             question.append("<p>Time's Up</p>")
-            question.append("Correct Answer Is")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Central serious retinothy is a disease of persons between 25 and 50</p>")
+            question.append("<img src= https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberTwentyEight = 6
         function timerForQAFive() {
@@ -182,7 +187,7 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQAOne();
             answerTwo.append("Correct!")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_c9S1gBJPFd9mC6-eDg4lQbNuXIoEF_Egc3VRSnEVyqjBlEvH>")
         };
         let numberTwentyNine = 6
         function clickTimerForQAOne() {
@@ -201,10 +206,10 @@ $(document).ready(function () {
         function clickQuestionOptATwo() {
             $("p").empty();
             clickTimerForQATwo();
-            question.text("Question clicked")
-            answer.text(" answer clicked")
-            answerTwo.text("answer clicked")
-            answerThree.text("answer clicked")
+            question.text("Central serous retinopathy has a strong association with which of the following")
+            answer.text(" Stress")
+            answerTwo.text("Water Intake per Day")
+            answerThree.text("Diabetes")
         };
         let numberThirty = 6
         function clickTimerForQATwo() {
@@ -225,7 +230,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQAThree();
             answerTwo.append("Correct Answer")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_c9S1gBJPFd9mC6-eDg4lQbNuXIoEF_Egc3VRSnEVyqjBlEvH>")
+
         };
         let numberThirtyOne = 6
         function clickTimerForQAThree() {
@@ -245,8 +251,9 @@ $(document).ready(function () {
         function clickCorrectAnswerOptAThree() {
             $("p").empty();
             clickTimerForQASix();
-            answerTwo.append("Correct Answer")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Correct!")
+            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_c9S1gBJPFd9mC6-eDg4lQbNuXIoEF_Egc3VRSnEVyqjBlEvH>")
+
         };
         let numberThirtyTwo = 6
         function clickTimerForQASix() {
@@ -267,10 +274,10 @@ $(document).ready(function () {
 
 
         roundOneA();
-        question.text("Question")
-        answer.text("One")
-        answerTwo.text("Two")
-        answerThree.text("Three")
+        question.append("<p>Symptoms of dry eyes include which of the following</p>")
+        answer.append(" <p>Burning sensation and watery eyes</p>")
+        answerTwo.append("<p>Burning sensation and bleeding of the eyes</p>")
+        answerThree.append("<p>Watery eyes and twitching of the eyelid</p>")
         answer.click(function () {
             correctAnswerOptAOne();
             answer.off('click').click(function () {
@@ -302,8 +309,8 @@ $(document).ready(function () {
         function wrongAnswerOptBOne() {
             $("p").empty();
             timerForQBOne();
-            question.append("<p>Wrong Answer! wrongAnswerOptBOne</p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Wrong Answer. Symptoms of dry eyes include burning sensation and watery eyes .</p>")
+            question.append("<img src= https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberSix = 6
         function timerForQBOne() {
@@ -322,10 +329,10 @@ $(document).ready(function () {
         function questionOptBTwo() {
             $("p").empty();
             timerForQBTwo();
-            question.text("Question2")
-            answer.text(" B One")
-            answerTwo.text("B Two")
-            answerThree.text("B Three")
+            question.text("Retinal Detachments are common in which of the following")
+            answer.text("in high myopes")
+            answerTwo.text("after contusion")
+            answerThree.text("with melanomas")
         }
         let numberSeven = 6
         function timerForQBTwo() {
@@ -344,8 +351,8 @@ $(document).ready(function () {
         function wrongAnswerOptBTwo() {
             $("p").empty();
             timerForQBThree();
-            question.append("<p>Wrong Answer! wrongAnswerOptBTwo</p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Wrong Answer! Retinal Detachments are common in high myopes.</p>")
+            question.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberEight = 6
         function timerForQBThree() {
@@ -364,10 +371,10 @@ $(document).ready(function () {
         function questionOptBThree() {
             $("p").empty();
             timerForQBFour();
-            question.text("Question3")
-            answer.text(" C One")
-            answerTwo.text("C Two")
-            answerThree.text("C Three")
+            question.text("Central serious retinopathy is a disease of")
+            answer.text("persons between 25 and 50")
+            answerTwo.text("elderly persons over 65")
+            answerThree.text("persons under the age of 18")
         }
         let numberNine = 6
         function timerForQBFour() {
@@ -387,8 +394,8 @@ $(document).ready(function () {
         function wrongAnswerOptBFour() {
             $("p").empty();
             timerForQBFive();
-            question.append("<p>Wrong Answer! wrongAnswerOptBFour</p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Wrong Answer! Central serious retinothy is a disease of persons between 25 and 50.</p>")
+            question.append("<img src= https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberTen = 6
         function timerForQBFive() {
@@ -410,8 +417,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQBOne();
             answer.append("wrong answer")
-            answerTwo.append("Correct Answer Is clickWrongAnswerOptBOne")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Retinal Detachments are common in high myopes")
+            answerThree.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         };
         let numberEleven = 6
         function clickTimerForQBOne() {
@@ -430,10 +437,10 @@ $(document).ready(function () {
         function clickQuestionOptBTwo() {
             $("p").empty();
             clickTimerForQBTwo();
-            question.text("Question clicked")
-            answer.text(" answer clicked")
-            answerTwo.text("answer clicked")
-            answerThree.text("answer clicked")
+            question.text("Central serous retinopathy has a strong association with which of the following")
+            answer.text("stress")
+            answerTwo.text("Water intake per day")
+            answerThree.text("Diabetes")
         };
         let numberTwelve = 6
         function clickTimerForQBTwo() {
@@ -454,8 +461,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQBThree();
             answer.append("wrong answer")
-            answerTwo.append("Correct Answer Is clickWrongAnswerOptBOne")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Central serous retinopathy has a strong association with stress")
+            answerThree.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         };
         let numberThirteen = 6
         function clickTimerForQBThree() {
@@ -476,8 +483,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQBSix();
             answer.append("Wrong Answer")
-            answerTwo.append("Correct Answer Is")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Central serous retinopathy has a strong association with stress")
+            answerThree.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         };
         let numberFourteen = 6
         function clickTimerForQBSix() {
@@ -520,8 +527,8 @@ $(document).ready(function () {
         function wrongAnswerOptCOne() {
             $("p").empty();
             timerForQCOne();
-            question.append("<p>Wrong Answer!</p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Wrong Answer!Symptoms of dry eyes include burning sensation and watery eyes.</p>")
+            question.append("<img src= https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberfifteen = 6
         function timerForQCOne() {
@@ -540,10 +547,10 @@ $(document).ready(function () {
         function questionOptCTwo() {
             $("p").empty();
             timerForQCTwo();
-            question.text("Question3")
-            answer.text(" C One")
-            answerTwo.text("C Two")
-            answerThree.text("C Three")
+            question.text("Retinal Detachments are common in which of the following")
+            answer.text("in high myopes")
+            answerTwo.text("after contusion")
+            answerThree.text("with melanomas")
         }
         let numberSixteen = 6
         function timerForQCTwo() {
@@ -562,8 +569,8 @@ $(document).ready(function () {
         function wrongAnswerOptCTwo() {
             $("p").empty();
             timerForQCThree();
-            question.append("<p>Wrong Answer! </p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Wrong Answer! Retinal Detachments are common in high myopes. </p>")
+            question.append("<img src= https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberSeventeen = 6
         function timerForQCThree() {
@@ -582,10 +589,10 @@ $(document).ready(function () {
         function questionOptCThree() {
             $("p").empty();
             timerForQCFour();
-            question.text("Question3")
-            answer.text(" C One")
-            answerTwo.text("C Two")
-            answerThree.text("C Three")
+            question.text("Central serious retinothy is a disease of")
+            answer.text("persons between 25 and 50")
+            answerTwo.text("elderly persons over 65")
+            answerThree.text("persons under the age of 18")
         }
         let numberEighteen = 6
         function timerForQCFour() {
@@ -605,8 +612,8 @@ $(document).ready(function () {
         function wrongAnswerOptCFour() {
             $("p").empty();
             timerForQCFive();
-            question.append("<p>Wrong Answer! </p>")
-            question.append("<img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            question.append("<p>Wrong Answer! Central serious retinothy is a disease of persons between 25 and 50 </p>")
+            question.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         }
         let numberNineteen = 6
         function timerForQCFive() {
@@ -628,8 +635,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQCOne();
             answer.append("wrong answer")
-            answerTwo.append("Correct Answer Is ")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Retinal Detachments are common in high myopes")
+            answerThree.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         };
         let numberTwenty = 6
         function clickTimerForQCOne() {
@@ -648,10 +655,10 @@ $(document).ready(function () {
         function clickQuestionOptCTwo() {
             $("p").empty();
             clickTimerForQCTwo();
-            question.text("Question clicked")
-            answer.text(" answer clicked")
-            answerTwo.text("answer clicked")
-            answerThree.text("answer clicked")
+            question.text("Central serous retinopathy has a strong association with which of the following")
+            answer.text("Stress")
+            answerTwo.text("Water intake per day")
+            answerThree.text("Diabetes")
         };
         let numberTwentyOne = 6
         function clickTimerForQCTwo() {
@@ -672,8 +679,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQCThree();
             answer.append("wrong answer")
-            answerTwo.append("Correct Answer Is")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Central serious retinopathy is a disease of person between 25 and 50.")
+            answerThree.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         };
         let numberTwentyTwo = 6
         function clickTimerForQCThree() {
@@ -694,8 +701,8 @@ $(document).ready(function () {
             $("p").empty();
             clickTimerForQCSix();
             answer.append("Wrong Answer")
-            answerTwo.append("Correct Answer Is")
-            answerThree.append("<img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRCWp3AhLRFZSCbz-qxDikRD4qST0DUFvxQcNqxRqMek8JHQZZQ>")
+            answerTwo.append("Central serous retinopathy has a strong association with stress")
+            answerThree.append("<img src=https://media.tenor.com/images/b6af2f4aef323a0eea222bf003ef5c17/tenor.gif>")
         };
         let numberTwentyThree = 6
         function clickTimerForQCSix() {
@@ -724,25 +731,6 @@ $(document).ready(function () {
             });
         });
 
-
-
-
-
-
-
-
-
-
-    });
-
-
-
-
-
-
-
-
-
-
+    }
 
 });
